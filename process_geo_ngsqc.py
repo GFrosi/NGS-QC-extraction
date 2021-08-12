@@ -116,7 +116,7 @@ def main():
     HS_ngs_df_chipseq_no_dup.to_csv("NGS_HS_ChipSeq_nodup_"+ str(len(HS_ngs_df_chipseq_no_dup))+ ".csv")
 
     #block 2
-    df_geo = pd.read_csv(args.dfgeo)
+    df_geo = pd.read_csv(args.dfgeo, keep_default_na=False)
     #df_ngs = pd.read_csv(args.dfngs)
     df_ngs1 = rename_col(HS_ngs_df_chipseq_no_dup)
     merged_df = merge_geo_ngs(df_geo,df_ngs1)
